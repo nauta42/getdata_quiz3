@@ -59,3 +59,5 @@ aggregate(V2 ~ Income.Group, data = m[m$Income.Group %in% c("High income: nonOEC
 
 ## Question 5
 ###
+breaks <- quantile(m$V2, probs = c(0,0.2,0.4,0.6,0.8,1), type = 1 )
+table(m$Income.Group, cut( x = m$V2, breaks = breaks))
